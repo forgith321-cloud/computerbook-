@@ -5,270 +5,131 @@
     <body>
         <a href="table of contents.html">back to table of contents</a>
 <pre>
-    # 2. Number System, Conversion & Boolean Logic — Short Notes
+    <h1><u>2. Number System and Conversion, Boolean Logic (11 Hours)</u></h1>
 
-## 2.1 Number System and Conversion
+<b>2.1 Number System and Conversion</b>
 
-### 2.1.1 Number Systems
+<b>2.1.1 Decimal, Binary, Octal, Hexadecimal Number System & Conversion</b>
 
-A **number system** is a method of representing numbers using a specific set of digits.
+A number system is a way of representing numbers using a set of symbols and rules. Every number system has a base (radix), which tells how many unique digits it uses.
 
-| Number System   | Base | Digits Used |
-| --------------- | ---: | ----------- |
-| **Decimal**     |   10 | 0–9         |
-| **Binary**      |    2 | 0, 1        |
-| **Octal**       |    8 | 0–7         |
-| **Hexadecimal** |   16 | 0–9, A–F    |
+- Decimal (Base 10): Uses digits 0-9. This is the number system we use in everyday life. Example: 245.
+- Binary (Base 2): Uses only two digits, 0 and 1. It is the language of computers because digital circuits have two states - on and off. Example: 1101.
+- Octal (Base 8): Uses digits 0-7. Example: 17 (octal).
+- Hexadecimal (Base 16): Uses digits 0-9 and letters A-F, where A=10, B=11, C=12, D=13, E=14, F=15. Example: 2F.
 
-**Hexadecimal values:**
-A = 10, B = 11, C = 12, D = 13, E = 14, F = 15
+<b>Conversion between number systems:</b>
 
-### Common Conversions
+- Decimal to Binary/Octal/Hex: Repeatedly divide the decimal number by the target base (2, 8, or 16) and record the remainders. Reading the remainders from bottom to top gives the converted number.
+- Binary/Octal/Hex to Decimal: Multiply each digit by its place value (base raised to the power of its position) and sum the results.
+- Binary to Octal: Group binary digits in sets of 3 (from the right) and convert each group to its octal equivalent.
+- Binary to Hexadecimal: Group binary digits in sets of 4 (from the right) and convert each group to its hex equivalent.
+- Octal/Hex to Binary: Convert each octal/hex digit into its 3-bit or 4-bit binary equivalent respectively.
 
-**Decimal → Binary:** Repeatedly divide by 2 and read remainders from bottom to top.
+Example: Decimal 25 to Binary: 25 divided by 2 repeatedly gives remainders 1,0,0,1,1, reading bottom-up: 11001.
+<hr>
+<b>2.1.2 Calculation in Binary - Addition and Subtraction</b>
 
-**Binary → Decimal:** Multiply each bit by the corresponding power of 2 and add.
+Binary Addition follows simple rules, similar to decimal addition but with only two digits:
 
-Example:
-`1011₂ = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 11₁₀`
+- 0 + 0 = 0, with carry 0
+- 0 + 1 = 1, with carry 0
+- 1 + 0 = 1, with carry 0
+- 1 + 1 = 0, with carry 1
 
-**Binary → Octal:** Group binary digits in groups of **3** from the right.
+Example: 1011 + 0110 = 10001
 
-**Binary → Hexadecimal:** Group binary digits in groups of **4** from the right.
+Binary Subtraction uses these basic rules:
 
----
+- 0 - 0 = 0, no borrow
+- 1 - 0 = 1, no borrow
+- 1 - 1 = 0, no borrow
+- 0 - 1 = 1, with a borrow
 
-## 2.1.2 Binary Addition and Subtraction
+When subtracting a larger digit from a smaller one (0-1), a borrow is taken from the next higher bit, just as in decimal subtraction.
+<hr>
+<b>2.1.3 One's and Two's Complement Methods of Binary Subtraction</b>
 
-### Binary Addition
+Computers often perform subtraction using complement methods because it allows subtraction to be done using the same circuitry as addition.
 
-| A | B | Sum | Carry |
-| - | - | --- | ----- |
-| 0 | 0 | 0   | 0     |
-| 0 | 1 | 1   | 0     |
-| 1 | 0 | 1   | 0     |
-| 1 | 1 | 0   | 1     |
+- One's Complement: Obtained by flipping every bit of the binary number (0 becomes 1, and 1 becomes 0). Subtraction is performed by adding the one's complement of the number to be subtracted, then adding any end-around carry back to the result.
+- Two's Complement: Obtained by taking the one's complement and then adding 1 to the least significant bit. This is the most widely used method in digital systems because it avoids the need for end-around carry and handles negative numbers cleanly.
 
-Important:
-**1 + 1 = 10₂**
+Example (Two's Complement of 0101): One's complement = 1010, add 1, Two's complement = 1011.
+<hr>
+<b><u>2.2 Logic Function and Boolean Algebra</u></b>
 
-### Binary Subtraction
+<b>2.2.1 Introduction to Boolean Algebra</b>
 
-| A | B | Difference | Borrow |
-| - | - | ---------- | ------ |
-| 0 | 0 | 0          | 0      |
-| 1 | 0 | 1          | 0      |
-| 1 | 1 | 0          | 0      |
-| 0 | 1 | 1          | 1      |
+Boolean algebra is a branch of algebra dealing with variables that hold only two values: True (1) or False (0). It was introduced by mathematician George Boole and forms the mathematical foundation of digital logic and computer circuit design.
 
-Important:
-**0 − 1 requires borrowing.**
+<b>2.2.2 Boolean Values, Truth Table, Boolean Expression, and Boolean Function</b>
 
----
+- Boolean Value: A quantity that can only be 0 (False) or 1 (True).
+- Truth Table: A listing of all possible combinations of input values and their corresponding output for a logical expression or gate.
+- Boolean Expression: A combination of Boolean variables and operators (AND, OR, NOT) such as A.B + C'.
+- Boolean Function: A function expressed using Boolean variables that produces a Boolean output, e.g. F(A,B) = A + B.
+<hr>
+<b>2.2.3 Logic Gates</b>
 
-## 2.1.3 One's and Two's Complement
+Logic gates are the basic building blocks of digital circuits. Each gate performs a specific logical operation:
 
-### One's Complement
+- AND: Output is 1 only when all inputs are 1. Function: Y = A.B
+- OR: Output is 1 when at least one input is 1. Function: Y = A+B
+- NOT: Inverts a single input. Function: Y = A'
+- NAND: Inverted AND - output is 0 only when all inputs are 1. Function: Y = (A.B)'
+- NOR: Inverted OR - output is 1 only when all inputs are 0. Function: Y = (A+B)'
+- XOR: Output is 1 when the inputs are different. Function: Y = A xor B
+- XNOR: Output is 1 when the inputs are the same. Function: Y = (A xor B)'
 
-Change every **0 → 1** and every **1 → 0**.
+The logic symbol for each gate is a standardized shape (e.g. a D-shape for AND, a curved shape for OR, a triangle with a bubble for NOT) used in circuit diagrams to represent the gate visually.
 
-Example:
+<b>2.2.4 Laws of Boolean Algebra</b>
 
-`101100 → 010011`
+These laws help simplify complex Boolean expressions, which reduces the number of gates needed in a circuit:
 
-### Two's Complement
+- Complement Laws: A + A' = 1, and A.A' = 0.
+- Identity Laws: A + 0 = A, and A.1 = A.
+- Commutative Law: A+B = B+A, and A.B = B.A (order doesn't affect the result).
+- Associative Law: (A+B)+C = A+(B+C), and (A.B).C = A.(B.C) (grouping doesn't affect the result).
+- Distributive Law: A.(B+C) = A.B + A.C, and A+(B.C) = (A+B).(A+C).
 
-**Two's complement = One's complement + 1**
+<b>2.2.5 Statement and Verification of Laws of Boolean Algebra Using Truth Table</b>
 
-Example:
+Each law can be verified by checking that both sides of the equation produce the same output for every possible combination of input values (0 or 1).
 
-`101100`
-One's complement → `010011`
-Add 1 → `010100`
+<b>1. Complement Laws: </b>A + A' = 1, and A.A' = 0
+- A=0: A' = 1, so A+A' = 0+1 = 1, and A.A' = 0.1 = 0
+- A=1: A' = 0, so A+A' = 1+0 = 1, and A.A' = 1.0 = 0
+In both cases A+A' = 1 and A.A' = 0, so the law is verified.
 
-### Binary Subtraction Using Two's Complement
-
-1. Find the two's complement of the number being subtracted.
-2. Add it to the first number.
-3. If there is a carry, discard it.
-4. The remaining bits are the answer.
-
----
-
-# 2.2 Logic Function and Boolean Algebra
-
-## 2.2.1 Boolean Algebra
-
-**Boolean algebra** is a mathematical system used to represent and simplify logical operations.
-
-It uses only two values:
-
-* **0 = False/LOW**
-* **1 = True/HIGH**
-
-It is widely used in **digital circuits and computers**.
-
----
-
-## 2.2.2 Boolean Values, Truth Table, Expression and Function
-
-### Boolean Value
-
-A variable can have only **0 or 1**.
-
-### Truth Table
-
-A table showing all possible input combinations and their corresponding outputs.
-
-### Boolean Expression
-
-An expression made using Boolean variables and logical operators.
-
-Example:
-
-`Y = A + B`
-
-### Boolean Function
-
-A relationship that gives an output based on one or more Boolean inputs.
-
-Example:
-
-`F(A,B) = A·B`
-
----
-
-# 2.2.3 Logic Gates
-
-genui{"learning_viz":{"type_id":"BOOLEAN_LOGIC"}}
-
-### 1. AND Gate
-
-Output is **1 only when all inputs are 1**.
-
-**Function:** `Y = A·B`
-
-### 2. OR Gate
-
-Output is **1 when at least one input is 1**.
-
-**Function:** `Y = A + B`
-
-### 3. NOT Gate
-
-Produces the opposite of the input.
-
-**Function:** `Y = A'`
-
-### 4. NAND Gate
-
-NOT of AND.
-
-**Function:** `Y = (A·B)'`
-
-### 5. NOR Gate
-
-NOT of OR.
-
-**Function:** `Y = (A+B)'`
-
-### 6. XOR Gate
-
-Output is **1 when inputs are different**.
-
-**Function:** `Y = A ⊕ B = A'B + AB'`
-
-### 7. XNOR Gate
-
-Output is **1 when inputs are the same**.
-
-**Function:** `Y = (A ⊕ B)' = AB + A'B'`
-
-### Truth Table
-
-| A | B | AND | OR | NAND | NOR | XOR | XNOR |
-| - | - | --: | -: | ---: | --: | --: | ---: |
-| 0 | 0 |   0 |  0 |    1 |   1 |   0 |    1 |
-| 0 | 1 |   0 |  1 |    1 |   0 |   1 |    0 |
-| 1 | 0 |   0 |  1 |    1 |   0 |   1 |    0 |
-| 1 | 1 |   1 |  1 |    0 |   0 |   0 |    1 |
-
-### NOT Gate Truth Table
-
-| A | A' |
-| - | -: |
-| 0 |  1 |
-| 1 |  0 |
-
-**Easy memory:**
-
-* AND → **Both**
-* OR → **Any**
-* XOR → **Different**
-* XNOR → **Same**
-* NOT → **Opposite**
-* NAND → **NOT AND**
-* NOR → **NOT OR**
-
----
-
-# 2.2.4 Laws of Boolean Algebra
-
-### 1. Identity Laws
-
-* `A + 0 = A`
-* `A · 1 = A`
-
-### 2. Complement Laws
-
-* `A + A' = 1`
-* `A · A' = 0`
-
-### 3. Commutative Laws
-
-* `A + B = B + A`
-* `A·B = B·A`
-
-### 4. Associative Laws
-
-* `A + (B + C) = (A + B) + C`
-* `A(BC) = (AB)C`
-
-### 5. Distributive Laws
-
-* `A(B + C) = AB + AC`
-* `A + BC = (A+B)(A+C)`
-
-### Important Boolean Identities
-
-* `A + A = A`
-* `A·A = A`
-* `A + 1 = 1`
-* `A·0 = 0`
-* `A + A'B = A + B`
-* `A + AB = A`
-* `A(A+B) = A`
-
----
-
-# 2.2.5 Verification Using Truth Tables
-
-To **verify a Boolean law**, calculate the result of the **left-hand side (LHS)** and **right-hand side (RHS)** for every possible input.
-
-If the LHS and RHS columns are identical, the law is **verified**.
-
-### Example: Identity Law
-
-`A + 0 = A`
-
-| A | A + 0 |  A |
-| - | ----: | -: |
-| 0 |     0 |  0 |
-| 1 |     1 |  1 |
-
-Since both columns are the same:
-
-**LHS = RHS → Law verified.**
+2. Identity Laws: A + 0 = A, and A.1 = A
+- A=0: A+0 = 0+0 = 0 = A, and A.1 = 0.1 = 0 = A
+- A=1: A+0 = 1+0 = 1 = A, and A.1 = 1.1 = 1 = A
+In both cases the result equals A itself, so the law is verified.
+
+3. Commutative Law: A+B = B+A, and A.B = B.A
+- A=0, B=0: A+B = 0, B+A = 0 | A.B = 0, B.A = 0
+- A=0, B=1: A+B = 1, B+A = 1 | A.B = 0, B.A = 0
+- A=1, B=0: A+B = 1, B+A = 1 | A.B = 0, B.A = 0
+- A=1, B=1: A+B = 1, B+A = 1 | A.B = 1, B.A = 1
+Since A+B always equals B+A, and A.B always equals B.A, the law is verified.
+
+4. Associative Law: (A+B)+C = A+(B+C), and (A.B).C = A.(B.C)
+- A=0, B=0, C=0: (A+B)+C = 0, A+(B+C) = 0 | (A.B).C = 0, A.(B.C) = 0
+- A=0, B=0, C=1: (A+B)+C = 1, A+(B+C) = 1 | (A.B).C = 0, A.(B.C) = 0
+- A=0, B=1, C=1: (A+B)+C = 1, A+(B+C) = 1 | (A.B).C = 0, A.(B.C) = 0
+- A=1, B=1, C=0: (A+B)+C = 1, A+(B+C) = 1 | (A.B).C = 0, A.(B.C) = 0
+- A=1, B=1, C=1: (A+B)+C = 1, A+(B+C) = 1 | (A.B).C = 1, A.(B.C) = 1
+The left-hand and right-hand sides match for every combination shown (and for the remaining combinations too), so the law is verified.
+
+5. Distributive Law: A.(B+C) = A.B + A.C
+- A=0, B=0, C=0: A.(B+C) = 0, A.B + A.C = 0
+- A=0, B=1, C=1: A.(B+C) = 0, A.B + A.C = 0
+- A=1, B=0, C=0: A.(B+C) = 0, A.B + A.C = 0
+- A=1, B=0, C=1: A.(B+C) = 1.(0+1) = 1, A.B + A.C = (1.0)+(1.1) = 0+1 = 1
+- A=1, B=1, C=1: A.(B+C) = 1, A.B + A.C = 1+1 = 1
+Since both sides match for all combinations, the law is verified to be true.
 
 </pre>
     </body>
