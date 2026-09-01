@@ -1,8 +1,283 @@
 <html>
-    <h>
-    
-    </h>
+    <head>
+    <titel>V</titel>
+    </head>
     <body>
         <a href="table of contents.html">back to table of contents</a>
+        <pre>
+        <h1>Programming Concepts & Logics </h1>
+        . INTRODUCTION TO PROGRAMMING LANGUAGES
+ 
+<p>A program is a set of step-by-step instructions written to tell a
+computer what task to perform. A programming language is the formal
+language used to write these instructions in a way the computer (or a
+translator program) can understand and execute.
+ 
+Programming languages provide the vocabulary and grammar (syntax) that
+a programmer uses to describe a solution to a problem so that a
+computer can carry it out.
+ </p>
+===================================================================
+ 
+2. GENERATIONS/LEVELS OF PROGRAMMING LANGUAGES
+ 
+2.1 Low-Level Language
+    Languages that are close to machine hardware.
+    - Machine Language (1st generation): Instructions written directly
+      in binary (0s and 1s); executed directly by the CPU without
+      translation, but very difficult for humans to write or read.
+    - Assembly Language (2nd generation): Uses short mnemonic codes
+      (e.g. ADD, MOV, SUB) instead of raw binary; needs an assembler to
+      convert it into machine code. Easier than machine language but
+      still hardware-dependent.
+ 
+2.2 High-Level Language
+    Languages that are closer to human (English-like) language and
+    independent of a particular machine's hardware, e.g. C, C++, Java,
+    Python, BASIC. They require a compiler or interpreter to be
+    converted into machine code, but are easier to write, read, debug,
+    and are portable across different machines.
+ 
+2.3 Fourth Generation Languages (4GL)
+    Languages designed to be even closer to natural human language and
+    focused on what the program should do rather than how to do it,
+    used mainly for database queries, report generation, and
+    application development, e.g. SQL, and various report generators.
+    They allow faster development with less code than 3rd-generation
+    languages.
+ 
+===================================================================
+ 
+3. LANGUAGE TRANSLATORS: COMPILER, INTERPRETER, ASSEMBLER
+ 
+A translator is a program that converts source code (written by a
+programmer) into machine code (understood by the computer).
+ 
+3.1 Compiler
+    - Translates the entire high-level source program into machine
+      code (object code) in one go, before execution.
+    - Reports all errors found after scanning the whole program.
+    - Once compiled, the program runs faster since translation happens
+      only once.
+    - Examples: C and C++ compilers.
+ 
+3.2 Interpreter
+    - Translates and executes the source program line by line.
+    - Stops execution as soon as it encounters an error, without
+      producing a full object file.
+    - Generally slower in execution than compiled programs, since
+      translation happens every time the program runs.
+    - Examples: BASIC, Python (interpreted execution).
+ 
+3.3 Assembler
+    - Converts assembly language (mnemonic instructions) into machine
+      language.
+    - Works specifically with low-level assembly code, not high-level
+      languages.
+ 
+===================================================================
+ 
+4. TYPES OF PROGRAMMING ERRORS
+ 
+4.1 Syntax Error
+    Occurs when the rules (grammar) of the programming language are
+    violated, e.g. a missing semicolon, unmatched brackets, or
+    misspelled keyword. Detected by the compiler/interpreter before or
+    during translation.
+ 
+4.2 Semantic Error
+    Occurs when the syntax is correct, but the meaning or logic of the
+    statement is wrong, so the program does not do what was intended
+    (e.g. using the wrong variable in a formula). Often not caught by
+    the translator; the program runs but gives wrong results.
+ 
+4.3 Runtime Error
+    Occurs while the program is running (execution), even though it
+    compiled successfully, e.g. division by zero, accessing invalid
+    memory, or an infinite loop. Causes the program to crash or behave
+    unexpectedly during execution.
+ 
+===================================================================
+ 
+5. CONTROL STRUCTURES
+ 
+A control structure determines the order in which individual
+statements or instructions in a program are executed.
+ 
+5.1 Sequence
+    Statements are executed one after another, in the exact order they
+    are written, from top to bottom.
+ 
+5.2 Selection (Decision)
+    Statements are executed conditionally — the program chooses between
+    different paths based on whether a condition is true or false
+    (e.g. if, if-else, switch statements).
+ 
+5.3 Iteration (Looping)
+    A block of statements is executed repeatedly as long as a given
+    condition holds true (e.g. for, while, do-while loops), used to
+    perform repetitive tasks without rewriting the same code.
+ 
+===================================================================
+ 
+6. PROGRAM DESIGN TOOLS
+ 
+Before writing actual code, programmers often plan the logic of a
+program using design tools.
+ 
+6.1 Algorithm
+    A finite, ordered set of well-defined steps written in plain
+    language (or structured English) to solve a specific problem.
+    - Should be simple, clear, and have a definite start and end.
+ 
+6.2 Flowchart
+    A graphical/diagrammatic representation of an algorithm, using
+    standard symbols to represent steps.
+    Common flowchart symbols:
+        - Oval/Terminator: Start / End
+        - Parallelogram: Input / Output
+        - Rectangle: Process / Calculation
+        - Diamond: Decision
+        - Arrow: Flow of control/direction
+        - Circle: Connector
+ 
+6.3 Pseudocode
+    An informal, English-like way of describing an algorithm's logic
+    using programming-style structure (keywords like IF, WHILE, FOR)
+    without following the strict syntax rules of any specific
+    programming language. It helps a programmer plan logic before
+    coding in an actual language.
+ 
+===================================================================
+ 
+7. DATA REPRESENTATION CODES
+ 
+7.1 Absolute Binary
+    The direct representation of numeric data using only binary digits
+    (0 and 1), following the standard binary number system.
+ 
+7.2 BCD (Binary Coded Decimal)
+    A coding system where each decimal digit (0–9) is represented
+    separately using its own 4-bit binary code, rather than converting
+    the whole number to pure binary. Simplifies decimal-binary
+    conversion for input/output devices.
+ 
+7.3 ASCII (American Standard Code for Information Interchange)
+    A character encoding standard that uses 7 (or 8) bits to represent
+    English letters, digits, punctuation marks, and control characters
+    as numeric codes, allowing text to be stored and processed by
+    computers.
+ 
+7.4 Unicode
+    A universal character encoding standard designed to represent
+    characters from almost all the world's writing systems (not just
+    English), using a larger number of bits per character than ASCII,
+    enabling multilingual text processing.
+ 
+===================================================================
+PART B: C PROGRAMMING LANGUAGE
+===================================================================
+ 
+8. INTRODUCTION AND FEATURES OF C LANGUAGE
+ 
+C is a general-purpose, procedural, high-level programming language
+originally developed by Dennis Ritchie at Bell Labs in the early
+1970s. It is widely used for system programming, application
+development, and as the foundation for many later languages such as
+C++, Java, and C#.
+ 
+Features of C:
+    - Simple and efficient, close to both hardware and human logic
+    - Structured/procedural programming language
+    - Portable — C programs can run on different machines with little
+      or no modification
+    - Rich set of built-in operators and functions
+    - Supports modular programming through functions
+    - Provides direct access to memory through pointers
+    - Extensible through user-defined functions and libraries
+    - Case-sensitive language
+ 
+===================================================================
+ 
+9. STRUCTURE OF A C PROGRAM
+ 
+A typical C program follows this general structure:
+ 
+    1. Documentation/comment section (optional) — describes the
+       program's purpose
+    2. Preprocessor directives / header file inclusions
+       (e.g. #include <stdio.h>)
+    3. Global declarations (variables/functions usable throughout
+       the program)
+    4. main() function — the entry point where execution begins
+           {
+               declaration part;
+               executable statements;
+           }
+    5. User-defined functions (optional) — defined outside main()
+ 
+Every C program must have exactly one main() function, which is where
+program execution starts and (usually) ends.
+ 
+===================================================================
+ 
+10. C PREPROCESSOR AND HEADER FILES
+ 
+The C preprocessor is a program that processes the source code before
+actual compilation begins, handling directives that start with the
+'#' symbol.
+ 
+Common preprocessor directives:
+    - #include — inserts the content of a header file into the
+      program (e.g. #include <stdio.h> for input/output functions)
+    - #define — defines a macro/constant to be substituted throughout
+      the program
+    - #ifdef / #ifndef / #endif — conditional compilation directives
+ 
+Header files contain declarations of standard library functions
+(e.g. printf(), scanf() are declared in stdio.h) that a program can
+use after including the relevant header.
+ 
+===================================================================
+ 
+11. OPERATORS AND EXPRESSIONS IN C
+ 
+An operator is a symbol that tells the compiler to perform a specific
+mathematical, relational, or logical operation. An expression is a
+combination of variables, constants, and operators that evaluates to
+a value.
+ 
+11.1 Arithmetic Operators
+    Used for basic mathematical operations:
+    +  (addition), -  (subtraction), *  (multiplication),
+    /  (division), %  (modulus/remainder)
+ 
+11.2 Relational Operators
+    Used to compare two values, resulting in true (1) or false (0):
+    ==  (equal to), !=  (not equal to), >  (greater than),
+    <  (less than), >=  (greater than or equal to),
+    <=  (less than or equal to)
+ 
+11.3 Logical Operators
+    Used to combine or invert conditions:
+    &&  (logical AND), ||  (logical OR), !  (logical NOT)
+ 
+11.4 Assignment Operator
+    =   assigns the value on the right to the variable on the left.
+    Compound assignment operators such as +=, -=, *=, /=, %= combine
+    an arithmetic operation with assignment.
+ 
+11.5 Unary Operators
+    Operate on a single operand:
+    +   (unary plus), -  (unary minus),
+    ++  (increment, pre/post), --  (decrement, pre/post)
+ 
+11.6 Conditional (Ternary) Operator
+    A shorthand for an if-else statement, written as:
+        condition ? value_if_true : value_if_false;
+    It evaluates the condition and returns one of the two values
+    depending on whether it is true or false.
+      </pre>
+      <hr>
     </body>
 </html>
